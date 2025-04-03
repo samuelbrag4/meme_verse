@@ -1,8 +1,8 @@
-import styles from './MemeCard.module.css';
+import styles from "./MemeCard.module.css";
 
 const MemeCard = ({ meme }) => {
   return (
-    <div className={styles.memeCard}>
+    <div key={meme.id} className={styles.memeCard}>
       <div className={styles.memeCardHeader}>
         <div className={styles.memeAuthor}>
           <img src={meme.authorAvatar} alt={meme.author} />
@@ -14,10 +14,27 @@ const MemeCard = ({ meme }) => {
       <div className={styles.memeContent}>
         <h3 className={styles.memeTitle}>{meme.title}</h3>
         <p className={styles.memeDescription}>{meme.description}</p>
+
+        {/* COMPONENTE: InteractionBar */}
         <div className={styles.interactionBar}>
-          <span>👍 {meme.likes}</span>
-          <span>💬 {meme.comments}</span>
+          <div className={styles.interactionButton}>
+            <span>👍</span>
+            <span>{meme.likes}</span>
+          </div>
+          <div className={styles.interactionButton}>
+            <span>💬</span>
+            <span>{meme.comments}</span>
+          </div>
+          <div className={styles.interactionButton}>
+            <span>🔄</span>
+            <span>Share</span>
+          </div>
+          <div className={styles.interactionButton}>
+            <span>🔖</span>
+            <span>Save</span>
+          </div>
         </div>
+        {/* FIM COMPONENTE: InteractionBar */}
       </div>
     </div>
   );

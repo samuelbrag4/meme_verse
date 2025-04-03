@@ -1,4 +1,4 @@
-import styles from './CategoriesSection.module.css';
+import styles from "./CategoriesSection.module.css";
 
 const CategoriesSection = ({ categories }) => {
   return (

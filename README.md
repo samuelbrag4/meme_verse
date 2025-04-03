@@ -64,7 +64,7 @@ O **MemeVerse** é uma plataforma de compartilhamento de memes desenvolvida com 
     npm run dev  
     ```  
 5. Acesse a aplicação no navegador:  
-    ```
+    ```  
     http://localhost:3000  
     ```  
 
@@ -74,10 +74,12 @@ O **MemeVerse** é uma plataforma de compartilhamento de memes desenvolvida com 
 - **Props:** Todos os dados dinâmicos foram passados via props para manter a separação de responsabilidades.  
 
 ## Desafios e Soluções  
-- **Desafio:** Garantir a responsividade em diferentes tamanhos de tela.  
-  - **Solução:** Utilizamos media queries nos arquivos CSS Modules.  
-- **Desafio:** Gerenciar o fluxo de dados entre os componentes.  
-  - **Solução:** Planejamos a estrutura de props antecipadamente e testamos cada componente isoladamente.  
+- **Desafio:** Realizar o props dos componentes.  
+  - **Solução:** Não consegui por falta de conhecimentos. A solução aplicada foi utilizar IA para entender o como e onde aplicar.  
+- **Desafio:** Corrigir problemas que não permitiam abrir a aplicação.  
+  - **Solução:** Revisei a configuração do ambiente e corrigi erros no código.  
+- **Desafio:** A página principal estava sem alguns estilos.  
+  - **Solução:** Revisei o arquivo CSS da página principal e o código jsx. Corrigi os erros encontrados e coloquei items que estavam faltando.  
 
 ## Tecnologias Utilizadas  
 - **Next.js 15**  

@@ -7,6 +7,7 @@ import FeaturedMemesSection from "@/components/FeaturedMemesSection";
 import CreatorsSection from "@/components/CreatorsSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props

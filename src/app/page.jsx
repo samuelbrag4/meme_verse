@@ -1,16 +1,21 @@
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
-import MemeCard from '../components/MemeCard';
-import CategoriesSection from '../components/CategoriesSection';
-import Footer from '../components/Footer';
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import CategoriesSection from "@/components/CategoriesSection";
+import Feed from "@/components/Feed";
+import FeaturedMemesSection from "@/components/FeaturedMemesSection";
+import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
+import CreatorsSection from "@/components/CreatorsSection";
+import NewsletterSection from "@/components/NewsletterSection";
 
-export default function HomePage() {
-  // Dados dos memes
+export default function Home() {
+  // Array de dados dos memes para serem passados como props
   const memes = [
     {
       id: 1,
       title: "Programador às 3 da manhã",
-      description: "Quando o código finalmente funciona depois de 5 horas debugando",
+      description:
+        "Quando o código finalmente funciona depois de 5 horas debugando",
       image: "https://i.imgur.com/JbIMvq2.jpg",
       likes: 452,
       comments: 87,
@@ -75,11 +80,12 @@ export default function HomePage() {
     },
   ];
 
-  // Dados do meme do dia
+  // Dados para o meme do dia (hero section)
   const memeOfTheDay = {
     id: 7,
     title: "Meme do Dia: Quando seu código funciona de primeira",
-    description: "Este momento raro que todos os desenvolvedores sonham em experimentar!",
+    description:
+      "Este momento raro que todos os desenvolvedores sonham em experimentar!",
     image: "https://i.imgur.com/vldGJnz.jpg",
     likes: 2452,
     comments: 387,
@@ -87,7 +93,32 @@ export default function HomePage() {
     authorAvatar: "https://i.pravatar.cc/150?img=20",
   };
 
-  // Categorias
+  // Array de criadores em destaque
+  const topCreators = [
+    {
+      id: 1,
+      name: "MemeQueen",
+      avatar: "https://i.pravatar.cc/150?img=23",
+      followers: "245K",
+      bio: "Criando memes que fazem seu dia melhor!",
+    },
+    {
+      id: 2,
+      name: "FunnyGuy42",
+      avatar: "https://i.pravatar.cc/150?img=24",
+      followers: "189K",
+      bio: "Especialista em memes de programação e gatos",
+    },
+    {
+      id: 3,
+      name: "LaughFactory",
+      avatar: "https://i.pravatar.cc/150?img=25",
+      followers: "327K",
+      bio: "Se não te fizer rir, devolvo seu tempo!",
+    },
+  ];
+
+  // Categorias de memes
   const categories = [
     { id: 1, name: "Programação", icon: "💻", count: 478 },
     { id: 2, name: "Escola", icon: "📚", count: 325 },
@@ -97,17 +128,61 @@ export default function HomePage() {
     { id: 6, name: "Esportes", icon: "⚽", count: 195 },
   ];
 
+  // Memes em destaque
+  const featuredMemes = [
+    {
+      id: 8,
+      title: "O código em produção",
+      image: "https://i.imgur.com/aVy8tFB.jpg",
+      author: "DevHumor",
+      category: "Programação",
+      trending: true,
+    },
+    {
+      id: 9,
+      title: "Modo escuro vs Modo claro",
+      image: "https://i.imgur.com/YnGsVzS.jpg",
+      author: "UIDesigner",
+      category: "Tecnologia",
+      trending: true,
+    },
+    {
+      id: 10,
+      title: "POV: Aula online",
+      image: "https://i.imgur.com/4MigGYQ.jpg",
+      author: "ZoomExpert",
+      category: "Escola",
+      trending: false,
+    },
+  ];
+
+  // Eventos próximos
+  const upcomingEvents = [
+    {
+      id: 1,
+      title: "Competição de Memes 2025",
+      date: "15 de Maio, 2025",
+      participants: 356,
+    },
+    {
+      id: 2,
+      title: "Workshop: Como Criar Memes Virais",
+      date: "22 de Maio, 2025",
+      participants: 127,
+    },
+  ];
+
   return (
-    <>
+    <div>
       <Header />
       <HeroSection memeOfTheDay={memeOfTheDay} />
       <CategoriesSection categories={categories} />
-      <div>
-        {memes.map((meme) => (
-          <MemeCard key={meme.id} meme={meme} />
-        ))}
-      </div>
+      <Feed memes={memes} />
+      <FeaturedMemesSection featuredMemes={featuredMemes} />
+      <CreatorsSection topCreators={topCreators} />
+      <NewsletterSection />
+      <Sidebar upcomingEvents={upcomingEvents} />
       <Footer />
-    </>
+    </div>
   );
 }

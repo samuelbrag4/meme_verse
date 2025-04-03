@@ -1,8 +1,12 @@
 import styles from "./CreatorCard.module.css";
 
-const CreatorCard = () => {
+const CreatorCard = ({ creator }) => {
+  if (!creator) {
+    return null; // Retorna nada se o creator não for passado
+  }
+
   return (
-    <div key={creator.id} className={styles.creatorCard}>
+    <div className={styles.creatorCard}>
       <img
         src={creator.avatar}
         alt={creator.name}

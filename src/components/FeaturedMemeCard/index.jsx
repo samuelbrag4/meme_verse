@@ -1,8 +1,12 @@
 import styles from "./FeaturedMemeCard.module.css";
 
-const FeaturedMemeCard = () => {
+const FeaturedMemeCard = ({ meme }) => {
+  if (!meme) {
+    return null; // Retorna nada se o meme não for passado
+  }
+
   return (
-    <div key={meme.id} className={styles.featuredCard}>
+    <div className={styles.featuredCard}>
       <div className={styles.featuredImageContainer}>
         <img
           src={meme.image}

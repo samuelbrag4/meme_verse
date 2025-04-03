@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
+import styles from "./page.module.css";
 import HeroSection from "@/components/HeroSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import Feed from "@/components/Feed";
 import FeaturedMemesSection from "@/components/FeaturedMemesSection";
-import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
 import CreatorsSection from "@/components/CreatorsSection";
 import NewsletterSection from "@/components/NewsletterSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -173,16 +173,46 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div className={styles.container}>
+      {/* COMPONENTE: Header */}
       <Header />
-      <HeroSection memeOfTheDay={memeOfTheDay} />
-      <CategoriesSection categories={categories} />
-      <Feed memes={memes} />
-      <FeaturedMemesSection featuredMemes={featuredMemes} />
-      <CreatorsSection topCreators={topCreators} />
-      <NewsletterSection />
-      <Sidebar upcomingEvents={upcomingEvents} />
+      {/* FIM COMPONENTE: Header */}
+
+      <div className={styles.mainContent}>
+        <div className={styles.contentArea}>
+          {/* COMPONENTE: HeroSection */}
+          <HeroSection memeOfTheDay={memeOfTheDay} />
+          {/* FIM COMPONENTE: HeroSection */}
+
+          {/* COMPONENTE: CategoriesSection */}
+          <CategoriesSection categories={categories} />
+          {/* FIM COMPONENTE: CategoriesSection */}
+
+          {/* COMPONENTE: Feed */}
+          <Feed memes={memes} />
+          {/* FIM COMPONENTE: Feed */}
+
+          {/* COMPONENTE: FeaturedMemesSection */}
+          <FeaturedMemesSection featuredMemes={featuredMemes} />
+          {/* FIM COMPONENTE: FeaturedMemesSection */}
+
+          {/* COMPONENTE: CreatorsSection */}
+          <CreatorsSection topCreators={topCreators} />
+          {/* FIM COMPONENTE: CreatorsSection */}
+
+          {/* COMPONENTE: NewsletterSection */}
+          <NewsletterSection />
+          {/* FIM COMPONENTE: NewsletterSection */}
+        </div>
+
+        {/* COMPONENTE: Sidebar */}
+        <Sidebar upcomingEvents={upcomingEvents} />
+        {/* FIM COMPONENTE: Sidebar */}
+      </div>
+
+      {/* COMPONENTE: Footer */}
       <Footer />
+      {/* FIM COMPONENTE: Footer */}
     </div>
   );
 }

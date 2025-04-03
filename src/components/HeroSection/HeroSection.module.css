@@ -1,0 +1,16 @@
+.heroSection {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  .heroContent {
+    flex: 1;
+  }
+  .heroImageContainer {
+    flex: 1;
+  }
+  .heroImage {
+    width: 100%;
+    border-radius: 10px;
+  }

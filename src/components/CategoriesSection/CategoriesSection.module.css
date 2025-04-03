@@ -1,0 +1,14 @@
+.categoriesSection {
+    padding: 2rem;
+  }
+  .categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  .categoryCard {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }

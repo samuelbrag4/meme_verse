@@ -1,14 +1,14 @@
 import EventCard from '../EventCard';
 import styles from './Sidebar.module.css';
 
-const Sidebar = () => {
+const Sidebar = ({upcomingEvents}) => {
   return (
     <aside className={styles.sidebar}>
           <div className={styles.sidebarSection}>
             <h3 className={styles.sidebarTitle}>Eventos Próximos</h3>
             {upcomingEvents.map((event) => (
               // COMPONENTE: EventCard
-              <EventCard />
+              <EventCard event={event} key={event.id} />
               // FIM COMPONENTE: EventCard
             ))}
           </div>

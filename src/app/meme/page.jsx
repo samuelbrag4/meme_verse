@@ -6,6 +6,8 @@ import Feed from "@/components/Feed";
 import FeaturedMemesSection from "@/components/FeaturedMemesSection";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
+import CreatorsSection from "@/components/CreatorsSection";
+import NewsletterSection from "@/components/NewsletterSection";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -196,41 +198,16 @@ export default function Home() {
           {/* FIM COMPONENTE: FeaturedMemesSection */}
 
           {/* COMPONENTE: CreatorsSection */}
-          
+          <CreatorsSection />
           {/* FIM COMPONENTE: CreatorsSection */}
 
           {/* COMPONENTE: NewsletterSection */}
-          <section className={styles.newsletterSection}>
-            <div className={styles.newsletterContent}>
-              <h2 className={styles.newsletterTitle}>Fique por dentro!</h2>
-              <p className={styles.newsletterDescription}>
-                Assine nossa newsletter e receba os melhores memes toda semana!
-              </p>
-              <div className={styles.newsletterForm}>
-                <input
-                  type="email"
-                  placeholder="Seu melhor e-mail"
-                  className={styles.newsletterInput}
-                />
-                <button className={styles.newsletterButton}>Assinar</button>
-              </div>
-              <p className={styles.newsletterDisclaimer}>
-                Nós respeitamos sua privacidade. Cancele quando quiser.
-              </p>
-            </div>
-            <div className={styles.newsletterImageContainer}>
-              <img
-                src="https://i.imgur.com/OELrGl5.jpg"
-                alt="Newsletter"
-                className={styles.newsletterImage}
-              />
-            </div>
-          </section>
+          <NewsletterSection />
           {/* FIM COMPONENTE: NewsletterSection */}
         </div>
 
         {/* COMPONENTE: Sidebar */}
-        <Sidebar />
+        <Sidebar upcomingEvents={upcomingEvents} />
         {/* FIM COMPONENTE: Sidebar */}
       </div>
 

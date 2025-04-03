@@ -3,6 +3,9 @@ import styles from "./page.module.css";
 import HeroSection from "@/components/HeroSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import Feed from "@/components/Feed";
+import FeaturedMemesSection from "@/components/FeaturedMemesSection";
+import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -189,34 +192,11 @@ export default function Home() {
           {/* FIM COMPONENTE: Feed */}
 
           {/* COMPONENTE: FeaturedMemesSection */}
-          
+          <FeaturedMemesSection />
           {/* FIM COMPONENTE: FeaturedMemesSection */}
 
           {/* COMPONENTE: CreatorsSection */}
-          <section className={styles.creatorsSection}>
-            <h2 className={styles.sectionTitle}>Criadores em Destaque</h2>
-            <div className={styles.creatorsGrid}>
-              {topCreators.map((creator) => (
-                // COMPONENTE: CreatorCard
-                <div key={creator.id} className={styles.creatorCard}>
-                  <img
-                    src={creator.avatar}
-                    alt={creator.name}
-                    className={styles.creatorAvatar}
-                  />
-                  <h3 className={styles.creatorName}>{creator.name}</h3>
-                  <p className={styles.creatorBio}>{creator.bio}</p>
-                  <div className={styles.creatorStats}>
-                    <span className={styles.creatorFollowers}>
-                      {creator.followers} seguidores
-                    </span>
-                  </div>
-                  <button className={styles.followButton}>Seguir</button>
-                </div>
-                // FIM COMPONENTE: CreatorCard
-              ))}
-            </div>
-          </section>
+          
           {/* FIM COMPONENTE: CreatorsSection */}
 
           {/* COMPONENTE: NewsletterSection */}
@@ -250,12 +230,12 @@ export default function Home() {
         </div>
 
         {/* COMPONENTE: Sidebar */}
-        
+        <Sidebar />
         {/* FIM COMPONENTE: Sidebar */}
       </div>
 
       {/* COMPONENTE: Footer */}
-      
+      <Footer />
       {/* FIM COMPONENTE: Footer */}
     </div>
   );

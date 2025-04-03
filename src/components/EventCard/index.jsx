@@ -1,8 +1,10 @@
 import styles from "./EventCard.module.css";
 
 const EventCard = ({ event }) => {
+  if (!event) return null; // Verifica se o evento foi passado
+
   return (
-    <div key={event.id} className={styles.eventCard}>
+    <div className={styles.eventCard}>
       <h4 className={styles.eventTitle}>{event.title}</h4>
       <p className={styles.eventDate}>{event.date}</p>
       <p className={styles.eventParticipants}>
